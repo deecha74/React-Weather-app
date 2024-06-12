@@ -45,6 +45,7 @@ const WeatherReact = () => {
           } else {
             imgurl = sunrise;
           }
+          document.querySelector(".weather").style.display = "block";
 
           setData({
             ...data,
@@ -70,7 +71,7 @@ const WeatherReact = () => {
   return (
     <>
       <div className="flex items-center main  justify-center h-lvh bg-blue-200">
-        <div className="h-3/4 rounded-xl flex flex-col   shadow-md p-6  bg-gradient-to-tl from-blue-100  to-blue-700 w-auto">
+        <div className="h-auto rounded-xl flex flex-col   shadow-md p-6  bg-gradient-to-tl from-blue-100  to-blue-700 w-auto">
           <div className="flex searchbox items-center gap-3 justify-center">
             <input
               type="text"
@@ -94,31 +95,33 @@ const WeatherReact = () => {
           <div className="error text-red-200 font-bold flex items-center justify-center">
             {error}
           </div>
-          <div className="flex flex-col items-center justify-center ">
-            <img
-              src={data.image}
-              alt=""
-              className="h-28 w-28 flex transition-all ease-in-out duration-200 items-center justify-center image p-1"
-            />
-            <h1 className="temp text-5xl font-bold">
-              {data.celcius}°<span className="text-3xl">C</span>
-            </h1>
+          <div className="weather">
+            <div className="flex flex-col items-center justify-center ">
+              <img
+                src={data.image}
+                alt=""
+                className="h-28 w-28 flex transition-all ease-in-out duration-200 items-center justify-center image p-1"
+              />
+              <h1 className="temp text-5xl font-bold">
+                {data.celcius}°<span className="text-3xl">C</span>
+              </h1>
 
-            <h1 className="city text-3xl font-bold p-3">{data.name}</h1>
-          </div>
-          <div className="flex items-center justify-between pt-6">
-            <div className="flex flex-row items-center justify-center ">
-              <WiHumidity className="text-3xl" />
-              <div>
-                <h1 className="humadity">{data.humidity}%</h1>
-                <h1>Humidity</h1>
-              </div>
+              <h1 className="city text-3xl font-bold p-3">{data.name}</h1>
             </div>
-            <div className="flex flex-row items-center gap-1 justify-center">
-              <FaWind className="text-3xl" />
-              <div>
-                <h1 className="speed">{data.speed} k/hr</h1>
-                <h1>Wind Speed</h1>
+            <div className="flex items-center justify-between pt-6">
+              <div className="flex flex-row items-center justify-center ">
+                <WiHumidity className="text-3xl" />
+                <div>
+                  <h1 className="humadity">{data.humidity}%</h1>
+                  <h1>Humidity</h1>
+                </div>
+              </div>
+              <div className="flex flex-row items-center gap-1 justify-center">
+                <FaWind className="text-3xl" />
+                <div>
+                  <h1 className="speed">{data.speed} k/hr</h1>
+                  <h1>Wind Speed</h1>
+                </div>
               </div>
             </div>
           </div>
