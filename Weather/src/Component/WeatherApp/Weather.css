@@ -1,0 +1,11 @@
+.image {
+  animation: image 3s ease-in-out infinite alternate-reverse;
+}
+@keyframes image {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
