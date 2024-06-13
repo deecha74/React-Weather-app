@@ -8,8 +8,8 @@ const MyRouter = () => {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Weather />} />
-          <Route path="/react" element={<WeatherReact />} />
+          <Route path="/react" element={<Weather />} />
+          <Route path="/" element={<WeatherReact />} />
         </Routes>
       </Router>
     </>
